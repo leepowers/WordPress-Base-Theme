@@ -1,0 +1,36 @@
+/*****************************************************************************
+ * Variables for SCSS
+ *****************************************************************************/
+
+/**
+ * Navigation element heights
+ */
+$nav-height: 100px;
+$nav-height-compress: 60px;
+
+/*
+ * Screen sizes for media queries.
+ * Sizes are breakpoints.
+ * Styles should be applied _up to_ a breakpoint (e.g. `max-width: $screen-large`)
+ */
+$screen-xlarge: 1280px;
+$screen-large: 1024px;
+$screen-tablet: 767px;
+$screen-small: 640px;
+$screen-mobile: 480px;
+$screen-tiny: 320px; 
+$screen-wp-mobile: 782px;
+
+/*
+ * Colors
+ */
+$brand-primary: #f00;
+$brand-secondary: #0f0;
+$brand-tertiary: #00f;
+$brand-highlight: #06f;
+$brand-black: #000;
+$brand-white: #fff;
+$brand-light: #f3f3f3;
+$brand-neutral: #555555;
+$brand-neutral2: #999999;
+$brand-neutral3: #cccccc; 

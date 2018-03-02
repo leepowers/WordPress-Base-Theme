@@ -1,0 +1,29 @@
+/*****************************************************************************
+ * General theme styles
+ *****************************************************************************/
+
+/**
+ * Utilities
+ */
+@mixin clearfix() {
+	content: "";
+	display: table;
+	clear: both;
+}
+.scaffold-u-block {
+	width: 100%;
+	display: block;
+	clear: both;
+	box-sizing: border-box;
+	&:after {
+		@include clearfix();
+	}
+}
+.scaffold-u-clearfix {
+	@include clearfix();
+}
+.page-wrap {
+	width: 90%;
+	max-width: $screen-xlarge;
+	margin: 0 auto;
+}

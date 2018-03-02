@@ -1,0 +1,183 @@
+/*****************************************************************************
+ * Drawer / Hamburger mobile menu
+ *****************************************************************************/
+
+/* Drawer control */
+.drawer-trigger {
+	display: none;
+	float: right;
+	width: $nav-height-compress;
+	height: $nav-height-compress;
+	position: relative;
+	@media screen and (max-width: $screen-large) {
+		display: block;
+	}
+}
+.drawer-button {
+	display: block;
+	position: absolute;
+	top: -5px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	color: $brand-primary;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	&:focus,
+	&:active,
+	&:hover
+	{
+		text-decoration: none;
+	}
+	.fa {
+		font-size: 48px;
+		margin-top: 12px;
+	}
+	.title {
+		display: none;
+		font-size: 18px;
+		margin-top: 4px;
+	}
+	.drawer-button-closed {
+		display: table-cell;
+	}
+	.drawer-button-opened {
+		display: none;
+	}
+	@media screen and (max-width: $screen-mobile) {
+		.fa {
+			font-size: 36px;
+		}
+		.title {
+			font-size: 18px;
+		}
+	}
+}
+.drawer-open {
+	.drawer-button {
+		.drawer-button-closed {
+			display: none;
+		}
+		.drawer-button-opened {
+			display: table-cell;
+		}
+	}
+}
+.drawer-button-align {
+	display: table;
+	width: 100%;
+	height: 100%;
+	.drawer-button-opened,
+	.drawer-button-closed
+	{
+		width: 100%;
+		vertical-align: middle;
+	}
+}
+
+/* Drawer menu */
+.drawer {
+    display: block;
+	box-sizing: border-box;
+    position: fixed;
+    z-index: 28000004;
+    top: 0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: $brand-white;
+    -webkit-transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transform: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transform: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transform: translate3d(100%, 0px, 0px);
+    transform: translate3d(100%, 0px, 0px);
+    overflow-x: hidden;
+    &.is-submenu-open {
+    	overflow-y: scroll;
+    }
+    @media screen and (max-width: $screen-tablet) {
+    	display: block;
+    }
+}
+.drawer-open .drawer {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+}
+.drawer-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+/*
+html.drawer-open {
+	margin-top: 0 !important;
+}*/
+.nav-drawer-menu {
+	padding-bottom: 0;
+	font-weight: bold;
+	ul {
+		width: 100%;
+		float: left;
+		clear: both;
+		border-top: solid $brand-neutral 1px;
+	}
+	ul.sub-menu {
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background: $brand-white;
+		width: 100%;
+		height: 100%;
+		transition: transform 0.2s;
+		-webkit-transition: transform 0.2s;
+		transform: translate3d(100%, 0px, 0px);
+		-webkit-transform: translate3d(100%, 0px, 0px);
+		margin: 0;
+		padding: 0;
+		&.is-open {
+			transform: translate3d(0px, 0px, 0px);
+			-webkit-transform: translate3d(0px, 0px, 0px);
+		}
+	}
+	li {
+		width: 100%;
+		float: left;
+		display: block;
+		clear: both;
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		color: $brand-black;
+		text-decoration: none;
+		font-size: 14px;
+		display: block;
+		line-height: 200%;
+		border-bottom: solid $brand-neutral 1px;
+		padding: 8px 10px;
+	}
+	h4,
+	.nolink > a
+	{
+		color: $brand-primary;
+		font-size: 24px;
+		line-height: 150%;
+		border-bottom: solid $brand-primary 1px;
+		font-weight: bold;
+	}
+	li.menu-item-back a {
+	    text-transform: uppercase;
+	    font-weight: lighter;	    
+	}
+}
+.nav-drawer-menu > li:last-child a {
+	border-bottom: 0;
+}
+
+
+

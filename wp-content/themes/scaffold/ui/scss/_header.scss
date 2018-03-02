@@ -1,0 +1,178 @@
+/*****************************************************************************
+ * Header, Navigation
+ *****************************************************************************/
+#wpadminbar {
+	position: fixed;
+}
+.header-top {
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	color: $brand-black;
+	/* border-bottom: solid $brand-black 5px; */
+	background-color: transparentize($brand-white, 0.05);
+    height: $nav-height;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 0;
+    .page-wrap {
+    	position: relative;
+    }
+	.logo {
+		transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		position: absolute;
+		left: 0px;
+		top: 5px;
+		display: block;
+		width: 120px;
+		float: left;
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+	&.compress {
+		height: $nav-height-compress;
+		.logo {
+			width: 70px;
+			top: 0px;
+			left: 10px;
+		}
+	}
+	@media screen and (max-width: $screen-large) {
+		height: $nav-height-compress;
+		.logo {
+			width: 70px;
+			top: 0px;
+			left: 10px;
+		}
+		.page-wrap {
+			padding: 0;
+		}
+	}
+}
+.header-spacer {
+	display: block;
+	height: $nav-height;
+	background-color: transparent;
+	@media screen and (max-width: $screen-large) {
+		height: $nav-height-compress;
+		display: block;	
+	}
+}
+body.admin-bar {
+	.header-top {
+		top: 32px;
+		@media screen and (max-width: $screen-wp-mobile) {
+			top: 46px;
+		}
+	}
+}
+.nav-header {
+    float: right;
+    width: 100%;
+    text-align: right;
+    li {
+    	position: relative;
+    	height: $nav-height;
+    	display: inline-block;
+    	a {
+    		height: $nav-height;
+    		line-height: $nav-height;
+    		vertical-align: middle;
+    		display: inline-block;
+    		padding: 0 10px;
+    		text-transform: uppercase;
+    		color: $brand-black;
+    		text-decoration: none;
+			font-size: 14px;
+			letter-spacing: .2em;
+			transition: all 0.3s;
+			-webkit-transition: all 0.3s;
+    	}
+    }
+    li.menu-item-has-children > a {
+		&:after {
+			content: "\f107";
+			font-family: FontAwesome;
+			opacity: 0.35;
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 4px;
+		}
+    }
+    .sub-menu {
+    	display: none;
+	    position: absolute;
+	    left: 10px;
+	    top: $nav-height;
+	    height: auto;
+	    width: 175px;
+	    text-align: left;
+	    padding: 0;
+	    background: $brand-white;
+	    border: solid $brand-primary 1px;
+	    -webkit-box-shadow: 0px 2px 4px transparentize($brand-black, 0.75);
+	    box-shadow: 0px 2px 4px transparentize($brand-black, 0.75);
+	    li {
+	    	height: auto;
+	    	display: block;
+	    	a {
+	    		height: auto;
+	    		line-height: 125%;
+			    font-size: 14px;
+			    text-transform: uppercase;
+			    width: 100%;
+			    display: block;
+			    border: 0;
+			    white-space: nowrap;
+			    padding: 8px;
+			    font-weight: lighter;
+			    letter-spacing: 0;
+			    text-transform: none;
+			    &:hover {
+			    	background-color: $brand-primary;
+			    	color: $brand-white;
+			    }
+	    	}
+	    	&:hover {
+	    		a {
+	    			border: 0;
+	    		}
+	    	}
+	    }
+    }
+    li:hover .sub-menu {
+    	display: block;
+    }
+	@media screen and (max-width: $screen-large) {
+		display: none;
+	}
+}
+.compress .nav-header {
+	li,
+	li a
+	{
+		height: $nav-height-compress;
+		line-height: $nav-height-compress;
+	}
+	.sub-menu {
+		top: $nav-height-compress;
+	}
+	.sub-menu li,
+	.sub-menu li a
+	{
+		height: auto;
+		line-height: 100%;
+	}
+}
+.nav-header .submenu-login:hover .sub-menu {
+	display: none;
+}
+.logged-in .nav-header .submenu-login:hover .sub-menu {
+	display: block;
+}

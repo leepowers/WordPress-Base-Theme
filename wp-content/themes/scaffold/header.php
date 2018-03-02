@@ -1,0 +1,69 @@
+<?php
+$core = scaffold_core::instance();
+$home_url = esc_attr(home_url());
+$blogname = esc_attr(get_bloginfo("name"));
+$blogdescription = esc_attr(get_bloginfo("description"));
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<title><?php wp_title(" | ", true, "right"); ?></title>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!--[if lt IE 9]>
+	<script src="<?php echo esc_url(SCAFFOLD_URL_JS . "/html5.js"); ?>"></script>
+	<![endif]-->
+	<?php wp_head(); ?>
+	<style type="text/css">
+		<?php echo $core->thememod->generate_styles(); ?>
+	</style>
+</head>
+<body <?php body_class("scaffold-js-wait"); ?>>
+	<div class="drawer" id="drawer">
+		<div class="drawer-menu nav-drawer-menu">
+			<?php
+				wp_nav_menu(array(
+					"theme_location" => "primary",
+					"container" => "",
+					"walker" => new scaffold_walker_drawer,
+				));
+			?>
+		</div>
+	</div>
+	<header class="header-top header-drawer scaffold-u-block" id="header_top">
+		<div class="page-wrap">
+			<div class="scaffold-u-block">
+			<?php
+				$logo_url = get_theme_mod("scaffold_logo");
+				if ($logo_url) {
+			?>
+			<a href="<?php echo $home_url; ?>" class="logo"><img src="<?php echo $logo_url; ?>" alt="<?php echo $blogname; ?>" title="<?php echo $blogname; ?>"></a>
+			<?php
+				}
+			?>
+			<nav class="nav-header" id="nav_header">
+			<?php
+				wp_nav_menu(array(
+					"theme_location" => "primary",
+					"container" => ""
+				));
+			?>
+			</nav>
+			<div class="drawer-trigger">
+				<a href="javascript:;" class="drawer-button" id="toggle_drawer">
+					<span class="drawer-button-align">
+						<span class="drawer-button-closed">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+							<span class="title"><?php _e("Menu", "scaffold"); ?></span>
+						</span>
+						<span class="drawer-button-opened">
+							<i class="fa fa-times" aria-hidden="true"></i>
+							<span class="title"><?php _e("Close", "scaffold"); ?></span>
+						</span>
+					</span>
+				</a>
+			</div>
+			</div>
+		</div>
+	</header>
+	<div class="header-spacer scaffold-u-block" id="top"></div>
+
