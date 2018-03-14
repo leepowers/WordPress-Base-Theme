@@ -28,6 +28,8 @@ class scaffold_hooks {
 		add_action("after_setup_theme", array(&$this, "setup_menus"));
         // Setup image sizes
 		$this->image_sizes();
+		// ACF option pages
+		$this->acf_option_pages();
 	}
 
 	/**
@@ -122,6 +124,19 @@ class scaffold_hooks {
 		add_image_size("custom-size", 160, 160, true);
 		set_post_thumbnail_size(160, 160, true);  // Default thumbnail size
 		*/
+	}
+
+	/**
+	 * Setup theme option pages
+	 */
+	public function acf_option_pages() {
+		if (function_exists("acf_add_options_page")) {
+			acf_add_options_sub_page(array(
+				"page_title" => __("Scaffold Settings", "scaffold"),
+				"menu_title" => __("Scaffold", "scaffold"),
+				"parent_slug" => "options-general.php",
+			));
+		}
 	}
 
 }
