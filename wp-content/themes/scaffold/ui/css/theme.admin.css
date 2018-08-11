@@ -1,3 +1,6 @@
 /**
  * WordPress admin dashboard styles for theme
  */
+#cpt_info_box {
+	display: none !important;
+}
