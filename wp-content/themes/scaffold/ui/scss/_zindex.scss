@@ -1,17 +1,26 @@
 /*****************************************************************************
  * z-index control, centralized, override all
  *****************************************************************************/
-#wpadminbar {
-	z-index: 28000005;
+#wpadminbar,
+#wpadminbar .ab-sub-wrapper,
+#wpadminbar ul,
+#wpadminbar ul li
+{
+	z-index: 28000035;
 }
 .header-top {
-	z-index: 28000004;
+	z-index: 28000015;
 }
 .drawer {
-	z-index: 28000004;
+	z-index: 28000015;
+}
+.woocommerce-store-notice,
+p.demo_store
+{
+	z-index: 28000025;
 }
 .mfp-bg,
 .mfp-wrap
 {
-	z-index: 28000006 !important;
+	z-index: 28000045 !important;
 }

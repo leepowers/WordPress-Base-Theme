@@ -126,3 +126,53 @@
     });
 
 })(jQuery);
+
+
+/*****************************************************************************
+ * Match Heights
+ *****************************************************************************/
+(function($) {
+
+    function match_heights2(elements) {
+        elements.css("height", "auto");
+        setTimeout(function() {
+            var h = 0;
+            elements.each(function() {
+                var h2 = parseInt($(this).height(), 10);
+                if (!isNaN(h2) && h2 > 0) {
+                    h = Math.max(h, h2);
+                }
+            });
+            if (h > 0) {
+                elements.height(h);
+                //$(".brick-6").height(h * 2);
+            }
+        }, 10);
+    }
+
+    function match_heights() {
+        var ftext = $(".match-heights");
+        if (ftext.length < 1) {
+            return false;
+        }
+        ftext.each(function() {
+            var n = $(this);
+            match_heights2($(".mh-child", n));
+            match_heights2($(".mh-child2", n));
+        });
+        return true;
+    }
+
+    function heights_listener() {
+        var has_heights = match_heights();
+        if (!has_heights) {
+            $(window).off("load resize", heights_listener);
+            $(document).off("ready", heights_listener);
+        }
+    }
+
+    $(document).on("ready", heights_listener);
+
+    $(window).on("load resize", heights_listener);
+
+})(jQuery);

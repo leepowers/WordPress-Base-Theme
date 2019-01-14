@@ -13,13 +13,15 @@ $nav-height-compress: 60px;
  * Sizes are breakpoints.
  * Styles should be applied _up to_ a breakpoint (e.g. `max-width: $screen-large`)
  */
+$screen-hd: 1920px;
+$screen-xxlarge: 1440px;
 $screen-xlarge: 1280px;
 $screen-large: 1024px;
+$screen-wp-mobile: 782px;
 $screen-tablet: 767px;
 $screen-small: 640px;
 $screen-mobile: 480px;
 $screen-tiny: 320px; 
-$screen-wp-mobile: 782px;
 
 /*
  * Colors

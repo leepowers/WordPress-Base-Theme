@@ -14,7 +14,8 @@ Please search and replace the following strings after copying to your WordPress 
   * The `SCAFFOLD_` prefix with a unique identifier for your theme
   * The `scaffold_` prefix with a unique identifier for your theme
   * The `scaffold-` prefix with a unique identifier for your theme
-  * the `"scaffold"` quoted string with a unqiue identifier for your theme
+  * The `"scaffold"` quoted string with a unqiue identifier for your theme
+  * The `Scaffold` title with site name / title
 * Replace `screenshot.png` with an actual screenshot
 
 
@@ -41,13 +42,13 @@ Please search and replace the following strings after copying to your WordPress 
 ## Verify
 
 	/usr/bin/sass /Users/leepowers/Clients/client/wp/wp-content/themes/scaffold/ui/scss/_theme.scss:/Users/leepowers/Clients/client/wp/wp-content/themes/scaffold/ui/css/theme.css
-	
+
 Double-check the output of `css/theme.css`
 
 ## Auto-compile on file save
 
 	launchctl load -w ~/Library/LaunchAgents/scaffold.scss.plist
-	
+
 
 # Cleanup
 
