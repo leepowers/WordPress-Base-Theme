@@ -1,8 +1,5 @@
 <?php
 
-require_once SCAFFOLD_LIB . "/widgets/posts-grid.php";
-
-
 class scaffold_widgets {
 
 	/**

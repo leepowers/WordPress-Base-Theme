@@ -76,7 +76,7 @@
 
 
 /*****************************************************************************
- * Animate fixed header on scroll
+ * Body classes for scrolled, below the fold
  *****************************************************************************/
 (function($) {
 
@@ -84,23 +84,21 @@
 
     var max_h = 0;
 
+    var body = $("body");
+
+    var st = 0;
+
     // Animate fixed header on scroll
     function animate_header() {
-        var st = $(document).scrollTop();
-        if (max_h === 0) {
-            max_h = $("body").hasClass("post-type-archive-product") ? 45 : 90;
-        }
-        if (st > max_h && $(document).outerWidth() > 960) {
-            $("#header_top").addClass("compress");
-            $("body").addClass("compressed-header");
+        if (st > max_h) {
+            body.addClass("is-scrolled");
         } else {
-            $("#header_top").removeClass("compress");
-            $("body").removeClass("compressed-header");
+            body.removeClass("is-scrolled");
         }
         if (wh && st >= wh) {
-            $("body").addClass("below-fold");
+            body.addClass("below-fold");
         } else {
-            $("body").removeClass("below-fold");
+            body.removeClass("below-fold");
         }
         window.requestAnimationFrame(animate_header);
     }
@@ -110,19 +108,8 @@
         wh = $(window).height();
     });
 
-    $(function() {
-        $("#scaffold_to_top").on("click", function(e) {
-            e.preventDefault();
-            $('html, body').animate(
-                {
-                    scrollTop: 0
-                },
-                500,
-                function() {
-
-                }
-            );
-        });
+    $(window).on("scroll", function() {
+        st = $(document).scrollTop();
     });
 
 })(jQuery);
@@ -175,4 +162,37 @@
 
     $(window).on("load resize", heights_listener);
 
+})(jQuery);
+
+/*****************************************************************************
+ * Scroll to hash with history update
+ *****************************************************************************/
+(function($) {
+    function scroll_to_hash(hash) {
+        var st = 0;
+        if (hash) {
+            var section = $(hash);
+            if (section.length < 1) {
+            return;
+            }
+            st = section.offset().top - $(".header-drawer").height() - $("#wpadminbar").height();
+        }
+        //$("html").removeClass("drawer-open");
+        $('html, body').animate({
+            scrollTop: st
+        }, 450, 'swing', function() {
+            if (document.location.hash !== hash) {
+                history.pushState({}, "", hash);
+            }              
+        });
+    }
+    $(function() {
+        $("a[href*='#']:not([href='#'])").click(function(e) {
+            e.preventDefault();
+            scroll_to_hash(this.hash);
+        });
+        window.onpopstate = function(e) {
+            scroll_to_hash(document.location.hash);
+        };
+    });
 })(jQuery);

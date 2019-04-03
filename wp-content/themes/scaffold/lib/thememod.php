@@ -38,36 +38,6 @@ class scaffold_thememod {
 				"settings" => "scaffold_logo",
 			))
 		);
-		/**
-		 * Email configuration
-		 */
-		$wp_customize->add_section("scaffold_email", array(
-			"title" => __("Email Settings", "scaffold"),
-			"description" => "",
-			"panel" => "",
-			"priority" => 20,
-			"capability" => "edit_theme_options",
-		));
-		// Email sender name
-		$wp_customize->add_setting("scaffold_email_from_name", array(
-			"default" => get_bloginfo("name"),
-			"transport" => "postMessage",
-		));
-		$wp_customize->add_control("scaffold_email_from_name", array(
-				"label" => __("Email From Name", "scaffold"),
-				"section" => "scaffold_email",
-				"settings" => "scaffold_email_from_name",
-		));
-		// Email sender
-		$wp_customize->add_setting("scaffold_email_from", array(
-			"default" => get_bloginfo("admin_email"),
-			"transport" => "postMessage",
-		));
-		$wp_customize->add_control("scaffold_email_from", array(
-				"label" => __("Sender Email", "scaffold"),
-				"section" => "scaffold_email",
-				"settings" => "scaffold_email_from",
-		));
 	}
 
 	/**

@@ -5,34 +5,48 @@
 /**
  * Navigation element heights
  */
-$nav-height: 100px;
-$nav-height-compress: 60px;
-
-/*
- * Screen sizes for media queries.
- * Sizes are breakpoints.
- * Styles should be applied _up to_ a breakpoint (e.g. `max-width: $screen-large`)
- */
-$screen-hd: 1920px;
+ $nav-height: 100px;
+ $nav-height-scrolled: 60px;
+ 
+ /*
+  * Screen sizes breakpoints for media queries
+  */
+$screen-grid-xlarge: 1200px;
+$screen-grid-large: 992px;
+$screen-grid-medium: 768px;
+$screen-grid-small: 576px; 
 $screen-xxlarge: 1440px;
-$screen-xlarge: 1280px;
-$screen-large: 1024px;
-$screen-wp-mobile: 782px;
-$screen-tablet: 767px;
-$screen-small: 640px;
-$screen-mobile: 480px;
-$screen-tiny: 320px; 
-
-/*
- * Colors
- */
-$brand-primary: #f00;
-$brand-secondary: #0f0;
-$brand-tertiary: #00f;
-$brand-highlight: #06f;
-$brand-black: #000;
-$brand-white: #fff;
-$brand-light: #f3f3f3;
-$brand-neutral: #555555;
-$brand-neutral2: #999999;
-$brand-neutral3: #cccccc; 
+$screen-xlarge: $screen-grid-xlarge;
+$screen-large: $screen-grid-large;
+$screen-mobile: $screen-grid-small;
+$screen-tablet: $screen-grid-medium;
+ 
+ /*
+  * Brand Colors
+  */
+ $brand-primary: #f00;
+ $brand-secondary: #0f0;
+ $brand-tertiary: #00f;
+ $brand-highlight: #06f;
+ $brand-black: #000;
+ $brand-white: #fff;
+ $brand-light: #f3f3f3;
+ $brand-neutral: #555555;
+ $brand-neutral2: #999999;
+ $brand-neutral3: #cccccc; 
+ 
+ /**
+  * WordPress specific variables.
+  * WordPress uses different breakpoints then our grid.
+  */
+  $wp-screen-mobile: 782px;
+  $wp-adminbar-height: 32px;
+  $wp-adminbar-height-mobile: 46px;
+ 
+ /**
+  * Transitions
+  */
+  @mixin scaffold_transition_default($property: all, $duration: 0.4s) {
+     -webkit-transition: $property $duration ease;
+     transition: $property $duration ease;
+ }

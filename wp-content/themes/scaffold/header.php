@@ -29,7 +29,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 			?>
 		</div>
 	</div>
-	<header class="header-top header-drawer scaffold-u-block" id="header_top">
+	<header class="main header-drawer scaffold-u-block">
 		<div class="page-wrap">
 			<div class="scaffold-u-block">
 			<?php

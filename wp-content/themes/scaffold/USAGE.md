@@ -29,25 +29,37 @@ Please search and replace the following strings after copying to your WordPress 
 	    <string>scaffold.scss</string>
 	    <key>ProgramArguments</key>
 	    <array>
-	        <string>/usr/bin/sass</string>
-	        <string>/Users/leepowers/Clients/client/wp/wp-content/themes/scaffold/ui/scss/_theme.scss:/Users/leepowers/Clients/client/wp/wp-content/themes/scaffold/ui/css/theme.css</string>
+	        <string>/Applications/dart-sass/sass</string>
+	        <string>/Users/leepowers/work/client/wp/wp-content/themes/scaffold/ui/scss/_theme.scss:/Users/leepowers/work/client/wp/wp-content/themes/scaffold/ui/css/theme.css</string>
 	    </array>
 	    <key>WatchPaths</key>
 	    <array>
-	        <string>/Users/leepowers/Clients/client/wp/wp-content/themes/scaffold/ui/scss/</string>
+	        <string>/Users/leepowers/work/client/wp/wp-content/themes/scaffold/ui/scss/</string>
 	    </array>
 	</dict>
 	</plist>
 
-## Verify
+## Verify scaffold
 
-	/usr/bin/sass /Users/leepowers/Clients/client/wp/wp-content/themes/scaffold/ui/scss/_theme.scss:/Users/leepowers/Clients/client/wp/wp-content/themes/scaffold/ui/css/theme.css
+	sass /Users/leepowers/work/snippets/wp/base/theme/wp-content/themes/scaffold/ui/scss/_theme.scss:/Users/leepowers/work/snippets/wp/base/theme/wp-content/themes/scaffold/ui/css/theme.css
 
-Double-check the output of `css/theme.css`
+## Verify in theme
+
+	sass /Users/leepowers/work/client/wp/wp-content/themes/scaffold/ui/scss/_theme.scss:/Users/leepowers/work/client/wp/wp-content/themes/scaffold/ui/css/theme.css
+
+Double-check the output of `ui/css/theme.css`
 
 ## Auto-compile on file save
 
 	launchctl load -w ~/Library/LaunchAgents/scaffold.scss.plist
+
+## Grid
+
+Same workflow for customizing the grid located at `ui/scss/grid/bootstrap-grid.scss`
+
+Variables for grid located at `ui/scss/grid/_variables.scss` - search for `@grid-custom` comments to find column number and gutter widths.
+
+	sass /Users/leepowers/work/snippets/wp/base/theme/wp-content/themes/scaffold/ui/scss/grid/bootstrap-grid.scss:/Users/leepowers/work/snippets/wp/base/theme/wp-content/themes/scaffold/ui/css/grid.css
 
 
 # Cleanup

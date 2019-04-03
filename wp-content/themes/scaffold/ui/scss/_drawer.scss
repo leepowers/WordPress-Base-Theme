@@ -6,10 +6,10 @@
 .drawer-trigger {
 	display: none;
 	float: right;
-	width: $nav-height-compress;
-	height: $nav-height-compress;
+	width: $nav-height-scrolled;
+	height: $nav-height-scrolled;
 	position: relative;
-	@media screen and (max-width: $screen-large) {
+	@media screen and (max-width: $screen-grid-medium) {
 		display: block;
 	}
 }
@@ -20,7 +20,7 @@
 	left: 0px;
 	height: 100%;
 	width: 100%;
-	color: $brand-primary;
+	color: $brand-black;
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -30,28 +30,11 @@
 	{
 		text-decoration: none;
 	}
-	.fa {
-		font-size: 48px;
-		margin-top: 12px;
-	}
-	.title {
-		display: none;
-		font-size: 18px;
-		margin-top: 4px;
-	}
 	.drawer-button-closed {
 		display: table-cell;
 	}
 	.drawer-button-opened {
 		display: none;
-	}
-	@media screen and (max-width: $screen-mobile) {
-		.fa {
-			font-size: 36px;
-		}
-		.title {
-			font-size: 18px;
-		}
 	}
 }
 .drawer-open {
@@ -78,6 +61,9 @@
 
 /* Drawer menu */
 .drawer {
+	@include scaffold_transition_default(0.3s, transform);
+    -webkit-transform: translate3d(100%, 0px, 0px);
+    transform: translate3d(100%, 0px, 0px);
     display: block;
 	box-sizing: border-box;
     position: fixed;
@@ -88,19 +74,9 @@
     height: 100%;
     padding: 0;
     background-color: $brand-white;
-    -webkit-transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transform: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transform: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transform: translate3d(100%, 0px, 0px);
-    transform: translate3d(100%, 0px, 0px);
     overflow-x: hidden;
     &.is-submenu-open {
     	overflow-y: scroll;
-    }
-    @media screen and (max-width: $screen-tablet) {
-    	display: block;
     }
 }
 .drawer-open .drawer {
@@ -123,7 +99,6 @@ html.drawer-open {
 		width: 100%;
 		float: left;
 		clear: both;
-		border-top: solid $brand-neutral 1px;
 	}
 	ul.sub-menu {
 		display: block;
@@ -155,7 +130,7 @@ html.drawer-open {
 	a {
 		color: $brand-black;
 		text-decoration: none;
-		font-size: 14px;
+		font-size: 18px;
 		display: block;
 		line-height: 200%;
 		border-bottom: solid $brand-neutral 1px;
