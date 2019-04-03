@@ -47,6 +47,7 @@ class scaffold_hooks {
 	public function ui_resources_last() {
 		// Theme scripts and styles
 		wp_enqueue_script("lazysizes", SCAFFOLD_URL . "/ui/js/lazysizes.min.js", array("jquery"), "v3.0.0-rc2", true);
+		wp_enqueue_style("fontawesome", "https://use.fontawesome.com/releases/v5.8.1/css/all.css", array(), null);
 		wp_enqueue_style("scaffold-grid", SCAFFOLD_URL_CSS . "/grid.css", array(), SCAFFOLD_VERSION);
 		wp_enqueue_style("scaffold", SCAFFOLD_URL_CSS . "/theme.css", array(), SCAFFOLD_VERSION);
 		wp_enqueue_script("scaffold", SCAFFOLD_URL_JS . "/theme.js", array("jquery"), SCAFFOLD_VERSION, true);

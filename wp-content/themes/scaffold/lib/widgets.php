@@ -24,8 +24,6 @@ class scaffold_widgets {
 				"after_title" => '</h6>',
 			));
 		}
-		// Widgets
-		register_widget("scaffold_widgets_posts_grid");
 	}
 
 }

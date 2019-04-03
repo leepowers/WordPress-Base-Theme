@@ -53,11 +53,9 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 					<span class="drawer-button-align">
 						<span class="drawer-button-closed">
 							<i class="fa fa-bars" aria-hidden="true"></i>
-							<span class="title"><?php _e("Menu", "scaffold"); ?></span>
 						</span>
 						<span class="drawer-button-opened">
 							<i class="fa fa-times" aria-hidden="true"></i>
-							<span class="title"><?php _e("Close", "scaffold"); ?></span>
 						</span>
 					</span>
 				</a>

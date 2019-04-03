@@ -8,26 +8,25 @@ header.main {
 	@include scaffold_transition_default();
 	color: $brand-black;
 	background-color: transparentize($brand-white, 0.05);
-    height: $nav-height;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    padding: 0;
-    .page-wrap {
-    	position: relative;
-    }
+	height: $nav-height;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	padding: 0;
+	.page-wrap {
+		position: relative;
+	}
 	.logo {
 		@include scaffold_transition_default();
 		position: absolute;
 		left: 0px;
 		top: 5px;
 		display: block;
-		width: 120px;
-		float: left;
 		img {
+			@include scaffold_transition_default();
 			display: block;
-			width: 100%;
-			height: auto;
+			width: auto;
+			height: $nav-height;
 		}
 	}
 	@media screen and (max-width: $screen-large) {
@@ -47,32 +46,30 @@ header.main {
     text-align: right;
     li {
     	position: relative;
-    	height: $nav-height;
     	display: inline-block;
     	a {
-    		height: $nav-height;
-    		line-height: $nav-height;
-    		vertical-align: middle;
-    		display: inline-block;
-    		padding: 0 10px;
-    		text-transform: uppercase;
-    		color: $brand-black;
-    		text-decoration: none;
-			font-size: 14px;
-			letter-spacing: .2em;
-			transition: all 0.3s;
-			-webkit-transition: all 0.3s;
+				height: $nav-height;
+				line-height: $nav-height;
+				vertical-align: middle;
+				display: inline-block;
+				padding: 0 10px;
+				text-transform: uppercase;
+				color: $brand-black;
+				text-decoration: none;
+				font-size: 14px;
+				letter-spacing: .2em;
+				transition: all 0.3s;
+				-webkit-transition: all 0.3s;
     	}
     }
     li.menu-item-has-children > a {
-		&:after {
-			content: "\f107";
-			font-family: FontAwesome;
-			opacity: 0.35;
-			display: inline-block;
-			vertical-align: middle;
-			margin-left: 4px;
-		}
+			&:after {
+				content: "\f107";
+				font-family: "Font Awesome\ 5 Free";
+				vertical-align: middle;
+				margin-left: 4px;
+				font-weight: bold;
+			}
     }
     .sub-menu {
     	display: none;
@@ -142,9 +139,15 @@ body.admin-bar {
 
 body.is-scrolled {
 	header.main {
-		.logo {
-			width: auto;
+		height: $nav-height-scrolled;
+		.logo img {
 			height: $nav-height-scrolled;
+		}
+	}
+	.nav-header {
+		li a {
+			height: $nav-height-scrolled;
+			line-height: $nav-height-scrolled;
 		}
 	}
 }
