@@ -23,6 +23,15 @@ html {
    * Bootstrap overrides
    */
 }
+.bootstrap-wrapper .align-items-start {
+  align-items: flex-start;
+}
+.bootstrap-wrapper .align-items-center {
+  align-items: center;
+}
+.bootstrap-wrapper .align-items-end {
+  align-items: flex-end;
+}
 .bootstrap-wrapper .clearfix::after {
   display: block;
   clear: both;
@@ -111,8 +120,8 @@ html {
 }
 .bootstrap-wrapper .container {
   width: 100%;
-  padding-right: 7.5px;
-  padding-left: 7.5px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -138,16 +147,16 @@ html {
 }
 .bootstrap-wrapper .container-fluid {
   width: 100%;
-  padding-right: 7.5px;
-  padding-left: 7.5px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 .bootstrap-wrapper .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -7.5px;
-  margin-left: -7.5px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 .bootstrap-wrapper .no-gutters {
   margin-right: 0;
@@ -166,8 +175,8 @@ html {
 .bootstrap-wrapper .col-auto, .bootstrap-wrapper .col-12, .bootstrap-wrapper .col-11, .bootstrap-wrapper .col-10, .bootstrap-wrapper .col-9, .bootstrap-wrapper .col-8, .bootstrap-wrapper .col-7, .bootstrap-wrapper .col-6, .bootstrap-wrapper .col-5, .bootstrap-wrapper .col-4, .bootstrap-wrapper .col-3, .bootstrap-wrapper .col-2, .bootstrap-wrapper .col-1 {
   position: relative;
   width: 100%;
-  padding-right: 7.5px;
-  padding-left: 7.5px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .bootstrap-wrapper .col {
   flex-basis: 0;

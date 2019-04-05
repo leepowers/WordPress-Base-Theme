@@ -20,10 +20,20 @@ class scaffold_hooks {
 		add_theme_support("post-thumbnails", array("post", "page"));
 		// Register/setup navigation menus
 		add_action("after_setup_theme", array(&$this, "setup_menus"));
+		// Enable SVG uploads
+		add_filter("upload_mimes", array(&$this, "upload_types"));
         // Setup image sizes
 		$this->image_sizes();
 		// ACF option pages
 		$this->acf_option_pages();
+	}
+
+	/**
+	 * Enable SVG file uploads
+	 */
+	public function upload_types($mimes) {
+		$mimes["svg"] = "image/svg+xml";
+		return $mimes;
 	}
 
 	/**
@@ -47,7 +57,10 @@ class scaffold_hooks {
 	public function ui_resources_last() {
 		// Theme scripts and styles
 		wp_enqueue_script("lazysizes", SCAFFOLD_URL . "/ui/js/lazysizes.min.js", array("jquery"), "v3.0.0-rc2", true);
+		wp_enqueue_script("slick-slider", SCAFFOLD_URL . "/ui/slick/slick.js", array("jquery"), "1.8.1", true);
 		wp_enqueue_style("fontawesome", "https://use.fontawesome.com/releases/v5.8.1/css/all.css", array(), null);
+		wp_enqueue_style("slick-slider", SCAFFOLD_URL . "/ui/slick/slick.css", array(), "1.8.1");
+		wp_enqueue_style("slick-theme", SCAFFOLD_URL . "/ui/slick/slick-theme.css", array(), "1.8.1");
 		wp_enqueue_style("scaffold-grid", SCAFFOLD_URL_CSS . "/grid.css", array(), SCAFFOLD_VERSION);
 		wp_enqueue_style("scaffold", SCAFFOLD_URL_CSS . "/theme.css", array(), SCAFFOLD_VERSION);
 		wp_enqueue_script("scaffold", SCAFFOLD_URL_JS . "/theme.js", array("jquery"), SCAFFOLD_VERSION, true);

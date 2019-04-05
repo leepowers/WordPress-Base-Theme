@@ -17,7 +17,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 		<?php echo $core->thememod->generate_styles(); ?>
 	</style>
 </head>
-<body <?php body_class("scaffold-js-wait"); ?>>
+<body <?php body_class(array("scaffold-js-wait", "bootstrap-wrapper")); ?>>
 	<div class="drawer" id="drawer">
 		<div class="drawer-menu nav-drawer-menu">
 			<?php

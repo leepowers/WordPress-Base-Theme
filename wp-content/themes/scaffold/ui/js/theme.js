@@ -132,7 +132,6 @@
             });
             if (h > 0) {
                 elements.height(h);
-                //$(".brick-6").height(h * 2);
             }
         }, 10);
     }

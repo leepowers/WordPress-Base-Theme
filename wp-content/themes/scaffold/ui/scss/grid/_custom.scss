@@ -3,3 +3,13 @@
  */
 
 $enable-flex: false !default;
+
+.align-items-start {
+    align-items: flex-start;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-end {
+    align-items: flex-end;
+}
