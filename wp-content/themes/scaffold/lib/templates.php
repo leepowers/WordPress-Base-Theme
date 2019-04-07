@@ -2,10 +2,13 @@
 
 /**
  * Class for template loading / rendering.
- * Used primarily for shortcodes.
  */
-
 class scaffold_templates {
+
+	/**
+	 * Number of layout panes rendered on current page
+	 */
+	static public $layout_count = 0;
 
 	/**
 	 * Load a template file, render, and return as a string
@@ -70,8 +73,38 @@ class scaffold_templates {
 		return preg_replace('/[^a-zA-Z0-9_]+/', '_', $s);
 	}
 
+	/**
+	 * Replace `<br>` with responsive line breaks
+	 */
 	public function br2lb($str, $classname = "lb") {
 		return str_replace(array("<br>", "<br/>", "<br />"), '<span class="' . $classname . '"></span>', $str);
 	}
+	
+	/**
+	 * Format an ACF link
+	 * - 1: link
+	 * - 2: target
+	 * - 3: additional attributes
+	 * - 4: link content
+	 */
+	public function format_acf_link($args, $format = '<a href="%1$s"%2$s%3$s>%4$s</a>') {
+		$link = shortcode_atts(array(
+			"url" => "",
+			"target" => "",
+			"attributes" => "",
+			"content" => "",
+		), $args);
+		if (isset($args["title"]) && $args["title"] && empty($link["content"])) {
+			$link["content"] = $args["title"];
+		}
+		$data = array(
+			$link["url"],
+			$link["target"] ? sprintf(' target="%s"', $link["target"]) : "",
+			$link["attributes"] ? (" " . $link["attributes"]) : "",
+			$link["content"]
+		);
+		return vsprintf($format, $data);
+	}
+
 
 }

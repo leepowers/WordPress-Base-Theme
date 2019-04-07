@@ -13,3 +13,6 @@ $enable-flex: false !default;
 .align-items-end {
     align-items: flex-end;
 }
+.columns-reverse {
+    flex-direction: row-reverse;
+}

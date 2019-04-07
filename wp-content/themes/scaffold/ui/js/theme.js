@@ -1,3 +1,5 @@
+new WOW().init();
+
 /*****************************************************************************
  * Drawer menu control
  *****************************************************************************/
@@ -186,7 +188,7 @@
         });
     }
     $(function() {
-        $("a[href*='#']:not([href='#'])").click(function(e) {
+        $("a[href^='#']:not([href='#'])").click(function(e) {
             e.preventDefault();
             scroll_to_hash(this.hash);
         });

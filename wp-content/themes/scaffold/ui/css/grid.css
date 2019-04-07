@@ -32,6 +32,9 @@ html {
 .bootstrap-wrapper .align-items-end {
   align-items: flex-end;
 }
+.bootstrap-wrapper .columns-reverse {
+  flex-direction: row-reverse;
+}
 .bootstrap-wrapper .clearfix::after {
   display: block;
   clear: both;
