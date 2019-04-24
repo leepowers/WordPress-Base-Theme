@@ -13,7 +13,7 @@ class scaffold_walker_drawer extends Walker_Nav_Menu {
 		}
 		$mi_html = "";
 		parent::start_el($mi_html, $item, $depth, $args, $id);
-		if (in_array("menu-item-has-children", $item->classes)) {
+		if (is_array($item->classes) && in_array("menu-item-has-children", $item->classes)) {
 			$mi_html = str_replace("</a>", "&nbsp;&raquo;</a>", $mi_html);
 		}
 		$output .= $mi_html;

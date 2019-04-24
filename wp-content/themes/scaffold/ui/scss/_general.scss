@@ -49,10 +49,23 @@
 	}
 }
 
+/*
+Substitue for grid .container class
+Full-screen fluid width with a max-width constraint
+*/
+.bootstrap-wrapper .scaffold-container {  
+	width: 100%;
+	max-width: $screen-xxlarge;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 /**
  * General
  */
 body {
+	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 }
 a {

@@ -3,6 +3,12 @@
  *****************************************************************************/
 
 /**
+ * Grid measurements
+ */
+ $grid-gutter-width: 30px;
+ $grid-gutter-width-half: $grid-gutter-width / 2;
+
+/**
  * Navigation element heights
  */
  $nav-height: 100px;
@@ -16,37 +22,38 @@ $screen-grid-large: 992px;
 $screen-grid-medium: 768px;
 $screen-grid-small: 576px; 
 $screen-xxlarge: 1440px;
-$screen-xlarge: $screen-grid-xlarge;
-$screen-large: $screen-grid-large;
-$screen-mobile: $screen-grid-small;
-$screen-tablet: $screen-grid-medium;
+$screen-xlarge: $screen-grid-xlarge - 1;
+$screen-large: $screen-grid-large - 1;
+$screen-medium: $screen-grid-medium - 1;
+$screen-tablet: $screen-medium;
+$screen-small: $screen-grid-small - 1;
  
  /*
   * Brand Colors
   */
- $brand-primary: #f00;
- $brand-secondary: #0f0;
- $brand-tertiary: #00f;
- $brand-highlight: #06f;
- $brand-black: #000;
- $brand-white: #fff;
- $brand-light: #f3f3f3;
- $brand-neutral: #555555;
- $brand-neutral2: #999999;
- $brand-neutral3: #cccccc; 
+$brand-primary: #f00;
+$brand-secondary: #0f0;
+$brand-tertiary: #00f;
+$brand-highlight: #06f;
+$brand-black: #000;
+$brand-white: #fff;
+$brand-light: #f3f3f3;
+$brand-neutral: #555555;
+$brand-neutral2: #999999;
+$brand-neutral3: #cccccc; 
  
  /**
   * WordPress specific variables.
   * WordPress uses different breakpoints then our grid.
   */
-  $wp-screen-mobile: 782px;
-  $wp-adminbar-height: 32px;
-  $wp-adminbar-height-mobile: 46px;
+$wp-screen-mobile: 782px;
+$wp-adminbar-height: 32px;
+$wp-adminbar-height-mobile: 46px;
  
  /**
   * Transitions
   */
-  @mixin scaffold_transition_default($property: all, $duration: 0.4s) {
-     -webkit-transition: $property $duration ease;
-     transition: $property $duration ease;
- }
+@mixin scaffold_transition_default($property: all, $duration: 0.4s) {
+  -webkit-transition: $property $duration ease;
+  transition: $property $duration ease;
+}

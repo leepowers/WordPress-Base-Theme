@@ -22,10 +22,20 @@ class scaffold_hooks {
 		add_action("after_setup_theme", array(&$this, "setup_menus"));
 		// Enable SVG uploads
 		add_filter("upload_mimes", array(&$this, "upload_types"));
+		// Disable emojis
+		add_action("init", array(&$this, "remove_emoji_filters"));
         // Setup image sizes
 		$this->image_sizes();
 		// ACF option pages
 		$this->acf_option_pages();
+	}
+
+	/**
+	 * Disable emoji character subs
+	 */
+	public function remove_emoji_filters() {
+		remove_filter("the_content", "convert_smilies", 20);
+		remove_filter("acf_the_content", "convert_smilies", 20);
 	}
 
 	/**
@@ -59,10 +69,12 @@ class scaffold_hooks {
 		wp_enqueue_script("lazysizes", SCAFFOLD_URL . "/ui/js/lazysizes.min.js", array("jquery"), "v3.0.0-rc2", true);
 		wp_enqueue_script("wowjs", SCAFFOLD_URL_JS . "/wow.js", array("jquery"), "1.1.3", true);
 		wp_enqueue_script("slick-slider", SCAFFOLD_URL . "/ui/slick/slick.js", array("jquery"), "1.8.1", true);
+		wp_enqueue_script("select2", SCAFFOLD_URL . "/ui/select2/select2.full.js", array("jquery"), "4.0.6-rc.0", true);
 		wp_enqueue_style("fontawesome", "https://use.fontawesome.com/releases/v5.8.1/css/all.css", array(), null);
 		wp_enqueue_style("animate-css", SCAFFOLD_URL_CSS . "/animate.css", array(), "3.7.0");
 		wp_enqueue_style("slick-slider", SCAFFOLD_URL . "/ui/slick/slick.css", array(), "1.8.1");
 		wp_enqueue_style("slick-theme", SCAFFOLD_URL . "/ui/slick/slick-theme.css", array(), "1.8.1");
+		wp_enqueue_style("select2", SCAFFOLD_URL . "/ui/select2/select2.min.css", array(), "4.0.6-rc.0");
 		wp_enqueue_style("scaffold-grid", SCAFFOLD_URL_CSS . "/grid.css", array(), SCAFFOLD_VERSION);
 		wp_enqueue_style("scaffold", SCAFFOLD_URL_CSS . "/theme.css", array(), SCAFFOLD_VERSION);
 		wp_enqueue_script("scaffold", SCAFFOLD_URL_JS . "/theme.js", array("jquery"), SCAFFOLD_VERSION, true);
