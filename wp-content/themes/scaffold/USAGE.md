@@ -16,6 +16,7 @@ Please search and replace the following strings after copying to your WordPress 
   * The `scaffold-` prefix with a unique identifier for your theme
   * The `"scaffold"` quoted string with a unqiue identifier for your theme
   * The `Scaffold` title with site name / title
+  * Search for any trailing `scaffold` entries
 * Replace `screenshot.png` with an actual screenshot
 
 

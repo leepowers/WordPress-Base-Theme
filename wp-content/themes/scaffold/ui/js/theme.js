@@ -203,6 +203,9 @@ new WOW().init();
  *****************************************************************************/
 function scaffoldAnimateCSS(element, animationName, callback) {
     const node = document.querySelector(element)
+    if (!node) {
+        return;
+    }
     node.classList.add('animated', animationName)
 
     function handleAnimationEnd() {
