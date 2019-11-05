@@ -17,11 +17,14 @@
  /*
   * Screen sizes breakpoints for media queries
   */
+$screen-grid-hd: 1920px;
+$screen-grid-xxlarge: 1440px;
 $screen-grid-xlarge: 1200px;
 $screen-grid-large: 992px;
 $screen-grid-medium: 768px;
 $screen-grid-small: 576px; 
-$screen-xxlarge: 1440px;
+$screen-hd: $screen-grid-hd - 1;
+$screen-xxlarge: $screen-grid-xxlarge - 1;
 $screen-xlarge: $screen-grid-xlarge - 1;
 $screen-large: $screen-grid-large - 1;
 $screen-medium: $screen-grid-medium - 1;
