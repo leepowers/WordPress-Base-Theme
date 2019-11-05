@@ -9,9 +9,6 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 	<title><?php wp_title(" | ", true, "right"); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url(SCAFFOLD_URL_JS . "/html5.js"); ?>"></script>
-	<![endif]-->
 	<?php wp_head(); ?>
 	<style type="text/css">
 		<?php echo $core->thememod->generate_styles(); ?>
