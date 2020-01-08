@@ -1,5 +1,6 @@
 # Ignore everything in the root except the "wp-content" directory.
 /*
+!.htaccess
 !.gitignore
 !wp-content/
 !README.md
@@ -15,8 +16,14 @@ wp-content/plugins/*
 
 # Ignore everything in the "themes" directory, except the custom themes
 wp-content/themes/*
+#wp-content/themes/scaffold/*
+#!wp-content/themes/scaffold/ui/
+#wp-content/themes/scaffold/ui/*
+#!wp-content/themes/scaffold/ui/scss
 !wp-content/themes/scaffold
 
 # Ignore DS_Store in all directories
 .DS_Store
+
+
 
