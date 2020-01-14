@@ -2,6 +2,10 @@
  * Fonts
  *****************************************************************************/
 
-@mixin scaffold_font_form() {
+@mixin scaffold_font_default() {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ @mixin scaffold_font_form() {
     font-family: Arial, Helvetica, sans-serif;
 }

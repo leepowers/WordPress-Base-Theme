@@ -33,7 +33,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 				$logo_url = get_theme_mod("scaffold_logo");
 				if ($logo_url) {
 			?>
-			<a href="<?php echo $home_url; ?>" class="logo"><img src="<?php echo $logo_url; ?>" alt="<?php echo $blogname; ?>" title="<?php echo $blogname; ?>"></a>
+			<a href="<?php echo $home_url; ?>" class="logo"><span class="valign1"><span class="valign2"><img src="<?php echo $logo_url; ?>" alt="<?php echo $blogname; ?>" title="<?php echo $blogname; ?>"></span></span></a>
 			<?php
 				}
 			?>

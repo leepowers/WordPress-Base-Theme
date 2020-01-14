@@ -22,8 +22,10 @@ wp-content/themes/*
 #!wp-content/themes/scaffold/ui/scss
 !wp-content/themes/scaffold
 
-# Ignore DS_Store in all directories
+# Ignore system dot files, cache dot files
 .DS_Store
+.sass-cache
+Thumbs.db
 
 
 

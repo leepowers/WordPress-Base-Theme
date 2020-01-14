@@ -20,22 +20,19 @@ header.main {
 		@include scaffold_transition_default();
 		position: absolute;
 		left: 0px;
-		top: 5px;
+		top: 0px;
 		display: block;
+		width: auto;
+		height: 100%;
 		img {
 			@include scaffold_transition_default();
-			display: block;
-			width: auto;
-			height: $nav-height;
+			height: $nav-height-scrolled;
 		}
 	}
 	@media screen and (max-width: $screen-large) {
 		height: $nav-height-scrolled;
 		.logo {
 			height: $nav-height-scrolled;
-			width: auto;
-			top: 0px;
-			left: 10px;
 		}
 	}
 }
