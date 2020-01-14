@@ -7,6 +7,7 @@ class scaffold_shortcodes {
 
 	public function bind() {
 		add_shortcode("scaffold-test", array(&$this, "test"));
+		add_shortcode("current-year", array(&$this, "current_year"));
 	}
 
 	public function test($args, $content = "", $tag = "") {
@@ -17,6 +18,10 @@ class scaffold_shortcodes {
 		);
 		$data = shortcode_atts($defaults, $args);
 		return $core->templates->render("shortcodes/test.php", $data);
+	}
+
+	public function current_year($args, $content = "", $tag = "") {
+		return date("Y");
 	}
 
 }
