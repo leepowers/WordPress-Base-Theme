@@ -24,6 +24,8 @@ class scaffold_hooks {
 		add_filter("upload_mimes", array(&$this, "upload_types"));
 		// Disable emojis
 		add_action("init", array(&$this, "remove_emoji_filters"));
+		// Disable big image scaling
+		add_filter("big_image_size_threshold", "__return_false");
         // Setup image sizes
 		$this->image_sizes();
 		// ACF option pages
