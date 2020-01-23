@@ -72,13 +72,13 @@ class scaffold_hooks {
 		wp_enqueue_script("wowjs", SCAFFOLD_URL_JS . "/wow.js", array("jquery"), "1.1.3", true);
 		wp_enqueue_script("slick-slider", SCAFFOLD_URL . "/ui/slick/slick.js", array("jquery"), "1.8.1", true);
 		wp_enqueue_script("select2", SCAFFOLD_URL . "/ui/select2/select2.full.js", array("jquery"), "4.0.6-rc.0", true);
-		wp_enqueue_style("fontawesome", "https://use.fontawesome.com/releases/v5.8.1/css/all.css", array(), null);
 		wp_enqueue_style("animate-css", SCAFFOLD_URL_CSS . "/animate.css", array(), "3.7.0");
 		wp_enqueue_style("slick-slider", SCAFFOLD_URL . "/ui/slick/slick.css", array(), "1.8.1");
 		wp_enqueue_style("slick-theme", SCAFFOLD_URL . "/ui/slick/slick-theme.css", array(), "1.8.1");
 		wp_enqueue_style("select2", SCAFFOLD_URL . "/ui/select2/select2.min.css", array(), "4.0.6-rc.0");
 		wp_enqueue_style("scaffold-grid", SCAFFOLD_URL_CSS . "/grid.css", array(), SCAFFOLD_VERSION);
 		wp_enqueue_style("scaffold", SCAFFOLD_URL_CSS . "/theme.css", array(), SCAFFOLD_VERSION);
+		wp_enqueue_script("fontawesome", "https://kit.fontawesome.com/67c1442228.js", array(), null, true);
 		wp_enqueue_script("scaffold", SCAFFOLD_URL_JS . "/theme.js", array("jquery"), SCAFFOLD_VERSION, true);
 		wp_localize_script("scaffold", "ajaxurl", admin_url("admin-ajax.php"));
 	}
