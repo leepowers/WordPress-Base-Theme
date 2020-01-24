@@ -217,3 +217,49 @@ function scaffoldAnimateCSS(element, animationName, callback) {
 
     node.addEventListener('animationend', handleAnimationEnd)
 }
+
+/*****************************************************************************
+ * Responsive background image
+ *****************************************************************************/
+(function($) {
+
+    var bgs = false;
+
+    function init_bgs() {
+        if (!bgs) {
+            bgs = $(".responsive-bgimg");
+            if (bgs.length > 0) {
+                $(window).on("resize", draw_bgs);
+            }
+        }
+    }
+
+    function draw_bgs() {
+        var ww = $(window).width();
+        bgs.each(function() {
+            draw_single($(this), ww);            
+        });
+    }
+
+    function draw_single(bg, ww) {
+        var breakpoint = bg.data("breakpoint");
+        if (!breakpoint) {
+            breakpoint = 767;
+        }
+        var k = ww > breakpoint ? "bgDesktop" : "bgMobile";
+        var url = bg.data(k);
+        var url_style;
+        if (url) {
+            url_style = "url('" + url + "')";
+        } else {
+            url_style = "unset";
+        }
+        bg.css("background-image", url_style);
+    }
+
+    $(function() {
+        init_bgs();
+        draw_bgs();
+    });
+
+})(jQuery);

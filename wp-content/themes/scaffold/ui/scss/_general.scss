@@ -71,3 +71,12 @@ body {
 a {
 	text-decoration: none;
 }
+
+/**
+ * Responsive background images
+ */
+ .responsive-bgimg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
