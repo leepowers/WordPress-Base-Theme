@@ -8,7 +8,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 <head>
 	<title><?php wp_title(" | ", true, "right"); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 	<style type="text/css">
 		<?php echo $core->thememod->generate_styles(); ?>
@@ -33,7 +33,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 				$logo_url = get_theme_mod("scaffold_logo");
 				if ($logo_url) {
 			?>
-			<a href="<?php echo $home_url; ?>" class="logo"><span class="valign1"><span class="valign2"><img src="<?php echo $logo_url; ?>" alt="<?php echo $blogname; ?>" title="<?php echo $blogname; ?>"></span></span></a>
+			<a href="<?php echo $home_url; ?>" class="logo"><span class="valign1"><span class="valign2"><img src="<?php echo $logo_url; ?>" alt="<?php echo $blogname; ?>"></span></span></a>
 			<?php
 				}
 			?>
@@ -47,6 +47,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 			</nav>
 			<div class="drawer-trigger">
 				<a href="javascript:;" class="drawer-button" id="toggle_drawer">
+				<span class="toggle-label"><?php _e("Toggle drawer menu", "scaffold"); ?></span>
 					<span class="drawer-button-align">
 						<span class="drawer-button-closed">
 							<i class="fa fa-bars" aria-hidden="true"></i>

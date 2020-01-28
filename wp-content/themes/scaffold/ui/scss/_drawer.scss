@@ -9,6 +9,13 @@
 	width: $nav-height-scrolled;
 	height: $nav-height-scrolled;
 	position: relative;
+	.toggle-label {
+		text-indent: -99999px;
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
 	@media screen and (max-width: $screen-grid-medium) {
 		display: block;
 	}
