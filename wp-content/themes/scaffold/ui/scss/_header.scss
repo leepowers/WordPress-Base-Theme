@@ -14,7 +14,10 @@ header.main {
 	left: 0px;
 	padding: 0;
 	.page-wrap {
-		position: relative;
+		padding: 0 15px;
+		> .scaffold-u-block {
+			position: relative;
+		}
 	}
 	.logo {
 		@include scaffold_transition_default();
