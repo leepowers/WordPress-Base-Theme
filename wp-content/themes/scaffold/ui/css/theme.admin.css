@@ -4,3 +4,12 @@
 #cpt_info_box {
 	display: none !important;
 }
+
+
+#adminmenu #menu_id div.wp-menu-image:before {
+    background-image: url(../img/favicon.png);
+	background-size: 20px;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: 0px;
+}
