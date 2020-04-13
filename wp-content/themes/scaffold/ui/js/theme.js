@@ -168,25 +168,38 @@ new WOW().init();
 /*****************************************************************************
  * Scroll to hash with history update
  *****************************************************************************/
-(function($) {
-    function scroll_to_hash(hash) {
-        var st = 0;
-        if (hash) {
-            var section = $(hash);
-            if (section.length < 1) {
-            return;
-            }
-            st = section.offset().top - $(".header-drawer").height() - $("#wpadminbar").height();
-        }
-        //$("html").removeClass("drawer-open");
-        $('html, body').animate({
-            scrollTop: st
-        }, 450, 'swing', function() {
-            if (document.location.hash !== hash) {
-                history.pushState({}, "", hash);
-            }              
-        });
+function scroll_to_hash(hash, update_state) {
+    var st = 0;
+    if (typeof update_state === "undefined") {
+        update_state = true;
     }
+    if (hash === "#donate") {
+        open_donate_modal();
+        if (document.location.hash !== hash) {
+            history.pushState({}, "", hash);
+        }
+        return;
+    }
+    if (hash) {
+        var section = jQuery(hash);
+        if (section.length < 1) {
+            return;
+        }
+        st = section.offset().top - jQuery(".header-drawer").height() - jQuery("#wpadminbar").height();
+    }
+    if (jQuery.fn.magnificPopup) {
+        jQuery.magnificPopup.close();
+    }
+    jQuery('html, body').animate({
+        scrollTop: st
+    }, 450, 'swing', function() {
+        if (update_state && document.location.hash !== hash) {
+            history.pushState({}, "", hash);
+        }              
+    });
+}
+
+(function($) {
     $(function() {
         $("a[href^='#']:not([href='#'])").click(function(e) {
             e.preventDefault();

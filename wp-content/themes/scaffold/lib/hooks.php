@@ -60,14 +60,8 @@ class scaffold_hooks {
 
 	/**
 	 * Setup final UI resources (CSS, JavaScript)
-	 * - Magnific Lightbox
-	 * - LazySizes
-	 * - Owl Carousel
-	 * - Match Heights
-	 * - Enqueue CSS overrides last (main theme styles)
 	 */
 	public function ui_resources_last() {
-		// Theme scripts and styles
 		wp_enqueue_script("lazysizes", SCAFFOLD_URL . "/ui/js/lazysizes.min.js", array("jquery"), "v3.0.0-rc2", true);
 		wp_enqueue_script("wowjs", SCAFFOLD_URL_JS . "/wow.js", array("jquery"), "1.1.3", true);
 		wp_enqueue_script("slick-slider", SCAFFOLD_URL . "/ui/slick/slick.js", array("jquery"), "1.8.1", true);
