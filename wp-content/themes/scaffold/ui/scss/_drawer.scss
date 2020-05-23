@@ -90,15 +90,11 @@
     -webkit-transform: translate3d(0px, 0px, 0px);
     transform: translate3d(0px, 0px, 0px);
 }
-.drawer-open {
+.drawer-open,
+.drawer-open body
+{
     overflow: hidden;
-    position: fixed;
-    width: 100%;
 }
-/*
-html.drawer-open {
-	margin-top: 0 !important;
-}*/
 .nav-drawer-menu {
 	padding-bottom: 0;
 	font-weight: bold;

@@ -173,13 +173,6 @@ function scroll_to_hash(hash, update_state) {
     if (typeof update_state === "undefined") {
         update_state = true;
     }
-    if (hash === "#donate") {
-        open_donate_modal();
-        if (document.location.hash !== hash) {
-            history.pushState({}, "", hash);
-        }
-        return;
-    }
     if (hash) {
         var section = jQuery(hash);
         if (section.length < 1) {

@@ -1,9 +1,6 @@
 /*****************************************************************************
  * Header, Navigation
  *****************************************************************************/
- #wpadminbar {
-	position: fixed;
-}
 header.main {
 	@include scaffold_transition_default();
 	color: $brand-black;

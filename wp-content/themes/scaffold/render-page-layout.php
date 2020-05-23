@@ -7,6 +7,7 @@
 $core = scaffold_core::instance();
 $page_layout = get_field("scaffold_page_layout");
 if (empty($page_layout)) {
+	the_content();
 	return;
 }
 foreach ($page_layout as $layout) {
