@@ -17,6 +17,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 	</style>
 </head>
 <body <?php body_class(array("scaffold-js-wait", "bootstrap-wrapper")); ?>>
+	<div class="drawer-bg" id="drawer_bg"><button type="button" class="toggle-drawer"></button></div>
 	<div class="drawer" id="drawer">
 		<div class="drawer-menu nav-drawer-menu">
 			<?php
