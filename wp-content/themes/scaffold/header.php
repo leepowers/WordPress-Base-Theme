@@ -49,7 +49,7 @@ $blogdescription = esc_attr(get_bloginfo("description"));
 			?>
 			</nav>
 			<div class="drawer-trigger">
-				<a href="javascript:;" class="drawer-button" id="toggle_drawer">
+				<a href="javascript:;" class="drawer-button toggle-drawer">
 				<span class="toggle-label"><?php _e("Toggle drawer menu", "scaffold"); ?></span>
 					<span class="drawer-button-align">
 						<span class="drawer-button-closed">

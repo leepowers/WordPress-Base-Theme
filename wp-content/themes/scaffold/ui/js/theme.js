@@ -32,7 +32,7 @@ new WOW().init();
 
     // Event handler for toggling drawer menu
     $(function() {
-        $("#toggle_drawer").on("click", function(e) {
+        $(".toggle-drawer").on("click", function(e) {
             e.preventDefault();
             toggleDrawer();
         });
