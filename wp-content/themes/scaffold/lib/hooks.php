@@ -112,10 +112,14 @@ class scaffold_hooks {
 	 */
 	public function acf_option_pages() {
 		if (function_exists("acf_add_options_page")) {
-			acf_add_options_sub_page(array(
+			$parent = acf_add_options_page(array(
 				"page_title" => __("Scaffold Settings", "scaffold"),
 				"menu_title" => __("Scaffold", "scaffold"),
-				"parent_slug" => "options-general.php",
+			));
+			acf_add_options_sub_page(array(
+				"page_title" => __("Scaffold Settings Subpage", "scaffold"),
+				"menu_title" => __("Scaffold Settings Subpage", "scaffold"),
+				"parent_slug" => $parent['menu_slug'],
 			));
 		}
 	}
