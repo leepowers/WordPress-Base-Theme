@@ -117,8 +117,8 @@ class scaffold_hooks {
 				"menu_title" => __("Scaffold", "scaffold"),
 			));
 			acf_add_options_sub_page(array(
-				"page_title" => __("Scaffold Settings Subpage", "scaffold"),
-				"menu_title" => __("Scaffold Settings Subpage", "scaffold"),
+				"page_title" => __("General Settings", "scaffold"),
+				"menu_title" => __("General", "scaffold"),
 				"parent_slug" => $parent['menu_slug'],
 			));
 		}

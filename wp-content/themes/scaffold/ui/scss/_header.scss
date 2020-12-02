@@ -4,7 +4,7 @@
 header.main {
 	@include scaffold_transition_default();
 	color: $brand-black;
-	background-color: transparentize($brand-white, 0.05);
+	background-color: $brand-white;
 	height: $nav-height;
 	position: fixed;
 	top: 0px;
@@ -12,8 +12,10 @@ header.main {
 	padding: 0;
 	.page-wrap {
 		padding: 0 15px;
+		height: 100%;
 		> .scaffold-u-block {
 			position: relative;
+			height: 100%;
 		}
 	}
 	.logo {
@@ -136,6 +138,7 @@ body.admin-bar {
 body.is-scrolled {
 	header.main {
 		height: $nav-height-scrolled;
+		background-color: transparentize($brand-white, 0.10);
 		.logo img {
 			height: $nav-height-scrolled;
 		}
